@@ -10,7 +10,7 @@ Result Find_Most_Close_Point_Pair(const vector<pair<double, double> >& P, const 
 {
     Result result;
     vector<pair<double, double> >P2;
-    if(P.size()<=3)
+    if(P.size()<=3) //递归出口
     {
 
         Point_Pair pp;
@@ -71,8 +71,8 @@ Result Find_Most_Close_Point_Pair(const vector<pair<double, double> >& P, const 
             Y_R.push_back(P_R[i].second);
         }
 
-        Result result_L = Find_Most_Close_Point_Pair(P_L, X_L, Y_L);
-        Result result_R = Find_Most_Close_Point_Pair(P_R, X_R, Y_R);
+        Result result_L = Find_Most_Close_Point_Pair(P_L, X_L, Y_L); //对P_L递归
+        Result result_R = Find_Most_Close_Point_Pair(P_R, X_R, Y_R); //对P_R递归
         double sigma1 = result_L.second;
         double sigma2 = result_R.second;
         double sigma = min(sigma1, sigma2);
@@ -91,7 +91,7 @@ Result Find_Most_Close_Point_Pair(const vector<pair<double, double> >& P, const 
             right_end = (X[middle-1]+X[middle])/2 + 2*sigma;
         }
 
-        for(int i=0; i<P.size(); i++)
+        for(int i=0; i<P.size(); i++)  //找Y'中的点
         {
             if(P[i].first>=left_end&&P[i].first<=right_end)
             {
@@ -99,12 +99,12 @@ Result Find_Most_Close_Point_Pair(const vector<pair<double, double> >& P, const 
             }
         }
 
-        for(int i=0; i<P2.size(); i++)
+        for(int i=0; i<P2.size(); i++) //一个点在P_L中，一个点在P_R中
         {
             for(int j=i+1; j<P2.size()&&j<i+8; j++)
             {
                 double dist = sqrt(pow(P2[i].first-P2[j].first,2) + pow(P2[i].second-P2[j].second,2));
-                if(dist<sigma)
+                if(dist<result.second) //更新最近点对
                 {
                     result.first.first = P[i];
                     result.first.second = P2[j];
@@ -148,7 +148,10 @@ int main()
     P[5] = make_pair(5.3, 5.2);
     P[6] = make_pair(3.2, 4.5);
     P[7] = make_pair(5.3, 4.7);
-
+    // P[8] = make_pair(4, 6.6);
+    // P[9] = make_pair(8, 7.9);
+    // P[10] = make_pair(6, 3.8);
+    // P[11] = make_pair(4, 6.9);     
     vector<double> X;
     vector<double> Y;
     for(int i=0; i<P.size(); i++)
@@ -160,10 +163,12 @@ int main()
     sort(Y.begin(), Y.end());
     Point_Sorting(P);    //对输入点对排序
     Result result = Find_Most_Close_Point_Pair(P, X, Y);
-    cout<<"距离最近的点对为："<<endl;
-    cout<<"("<<result.first.first.first<<","<<result.first.first.second<<")"<<"和";
+    cout<<endl;
+    cout<<endl;
+    cout<<"The shortest-distance Point-Pair is:"<<endl;
+    cout<<"("<<result.first.first.first<<","<<result.first.first.second<<")"<<" and ";
     cout<<"("<<result.first.second.first<<","<<result.first.second.second<<")"<<endl;
-    cout<<"最短距离为："<<result.second<<endl;
+    cout<<"The shortest dist is:"<<result.second<<endl;
     
     return 0;
 }
