@@ -6,7 +6,7 @@
 # include<cmath>
 using namespace std;
 
-enum {VectorSize = 1000000};
+enum {ArraySize = 100000000};
 
 void InsertSort(vector<int>& Input) //插入排序
 {
@@ -69,9 +69,9 @@ int main()
 {
     //输入数组
     vector<int> Input;
-    for(int i=0; i<VectorSize; i++)
+    for(int i=0; i<ArraySize; i++)
     {
-        Input.push_back(rand()%VectorSize);
+        Input.push_back(rand()%ArraySize);
     }
     cout<<"Before sorting:"<<endl;
     // display(Input);
