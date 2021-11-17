@@ -1,0 +1,15 @@
+9, black
+1, red
+12, black
+0, black
+2, black
+11, red
+nil
+nil
+nil
+nil
+7, red
+nil
+nil
+nil
+nil
