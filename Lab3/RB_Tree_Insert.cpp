@@ -6,6 +6,7 @@
 #include <cstring>
 
 using namespace std;
+
 typedef bool colortype;
 const colortype black = false;
 const colortype red = true;
@@ -29,6 +30,7 @@ TNode* CreatNode(int k)
     pointer->color = red;
     return pointer;
 }
+
 class RBTree{
     public:
         RBTree()
@@ -120,8 +122,7 @@ RBTree& RB_Insert_Fixup(RBTree& T, TNode* z)
                     z->p->color = black;    //case 3
                     z->p->p->color = red;  //case 3
                     right_rotate(T, z->p->p);   //case 3  
-            }
-            
+            }            
         }
         else{
                 TNode* y = z->p->p->left;
@@ -218,7 +219,7 @@ vector<string> split(const string& str, const string& delim) //将输入字符�
 	char * d = new char[delim.length() + 1];
 	strcpy(d, delim.c_str());
  
-	char *p = strtok(strs, d); //调用C库函数strok()进行字符串分割
+	char *p = strtok(strs, d); //调用C库函数strtok()进行字符串分割
 	while(p) { 
 		string s = p; //分割得到的字符串转换为string类型
 		vec_result.push_back(s); //存入结果数组

@@ -1,14 +1,40 @@
 9, black
+4, black
+14, black
 1, red
-12, black
+6, red
+12, red
+18, red
 0, black
 2, black
-11, red
+5, black
+7, black
+11, black
+13, black
+16, black
+19, black
+nil
+nil
+nil
+3, red
+nil
+nil
+nil
+8, red
+10, red
+nil
+nil
+nil
+15, red
+17, red
 nil
 nil
 nil
 nil
-7, red
+nil
+nil
+nil
+nil
 nil
 nil
 nil

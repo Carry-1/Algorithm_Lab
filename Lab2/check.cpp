@@ -41,6 +41,7 @@ int main()
     }
     cout<<endl;
     cout<<endl;
+    cout<<"brutal search:"<<endl;
     cout<<"The shortest-distance Point-Pair is:"<<endl;
     cout<<"("<<result.first.first.first<<","<<result.first.first.second<<")"<<" and ";
     cout<<"("<<result.first.second.first<<","<<result.first.second.second<<")"<<endl;

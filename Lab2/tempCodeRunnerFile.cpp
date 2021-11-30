@@ -1,3 +1,12 @@
-cout<<"("<<result.first.first.first<<result.first.first.second<<")"<<"and";
-    cout<<"("<<result.first.second.first<<result.first.second.second<<")"<<"and";
-    cout<<"shortest dist:"<<result.second<<endl;
+P[0] = make_pair(1.1, 2.0);
+    P[1] = make_pair(3.1, 1.0);
+    P[2] = make_pair(4.4, 5.3);
+    P[3] = make_pair(2.6, 3.2);
+    P[4] = make_pair(2.6, 4.6);
+    P[5] = make_pair(5.3, 5.2);
+    P[6] = make_pair(3.2, 4.5);
+    P[7] = make_pair(5.3, 4.7);
+    P[8] = make_pair(4, 6.6);
+    P[9] = make_pair(8, 7.9);
+    P[10] = make_pair(6, 3.8);
+    P[11] = make_pair(4, 6.9);

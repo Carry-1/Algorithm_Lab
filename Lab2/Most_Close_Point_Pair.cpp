@@ -79,7 +79,7 @@ Result Find_Most_Close_Point_Pair(const vector<pair<double, double> >& P, const 
         result = (sigma==sigma1) ? result_L : result_R;
 
         
-        double left_end, right_end;  //设置跨区域的左右端点
+        double left_end, right_end;  //设置带形区域的左右端点
         if(middle%2==1)  //如middle = 3  -> 0 1 2 3 4 
         {
             left_end = X[middle-1] - 2*sigma; 
@@ -139,7 +139,7 @@ vector<pair<double, double> > Point_Sorting(vector<pair<double, double> > & P)
 
 int main()
 {
-    vector<pair<double, double> > P(8, pair<double,double>(0,0));
+    vector<pair<double, double> > P(12, pair<double,double>(0,0));
     P[0] = make_pair(1.1, 2.0);
     P[1] = make_pair(3.1, 1.0);
     P[2] = make_pair(4.4, 5.3);
@@ -148,10 +148,10 @@ int main()
     P[5] = make_pair(5.3, 5.2);
     P[6] = make_pair(3.2, 4.5);
     P[7] = make_pair(5.3, 4.7);
-    // P[8] = make_pair(4, 6.6);
-    // P[9] = make_pair(8, 7.9);
-    // P[10] = make_pair(6, 3.8);
-    // P[11] = make_pair(4, 6.9);     
+    P[8] = make_pair(4, 6.6);
+    P[9] = make_pair(8, 7.9);
+    P[10] = make_pair(6, 3.8);
+    P[11] = make_pair(4, 6.9);     
     vector<double> X;
     vector<double> Y;
     for(int i=0; i<P.size(); i++)
