@@ -118,6 +118,7 @@ string Read(){ //读取txt文件，处理成一个vector<vector<int>>--二维整
     }
     return Input;
 }
+
 void Output(const map<char, string>& table)
 {
         ofstream outfile("encode.txt");
