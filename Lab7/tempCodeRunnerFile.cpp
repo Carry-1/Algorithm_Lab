@@ -1,0 +1,1 @@
+    ifstream Infile("data.txt");
